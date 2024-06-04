@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Flutter App</title>
+  <script>
+    // Menginisialisasi service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('web/flutter_service_worker.js');
+      });
+    }
+
+    // Fungsi untuk menampilkan notifikasi
+    function showNotification() {
+      new Notification('Tweet Sent!', {
+        body: 'Your tweet has been sent successfully.'
+      });
+    }
+  </script>
+</head>
+<body>
+  <!-- Konten aplikasi Flutter web Anda -->
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
